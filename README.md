@@ -5,3 +5,8 @@ There is also a note that records all the notes i take when i watch the lecture 
 Lab0 is just a C practice.
 
 Lab1 I skipped the floating point functions and get 44 points only.
+
+Lab2 ONLY finished the first five phases, phase_6 and secret_phase are too long.
+
+Lab3 ONLY finished the first three easy attacks. The key is to translate assembly into machine code and follow little Endian.
+
