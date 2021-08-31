@@ -10,3 +10,6 @@ Lab2 ONLY finished the first five phases, phase_6 and secret_phase are too long.
 
 Lab3 ONLY finished the first three easy attacks. The key is to translate assembly into machine code and follow little Endian.
 
+Lab5 To make life easier, we can treat read and write as the same thing. Notice that the update of lru is strange. Blocking is too hard.
+
+Notice that if you are running VMware on Mac, you need to cp the shared folder into a local folder on the vm, otherwise wield things will happen.

@@ -22,6 +22,52 @@ int is_transpose(int M, int N, int A[N][M], int B[M][N]);
 char transpose_submit_desc[] = "Transpose submission";
 void transpose_submit(int M, int N, int A[N][M], int B[M][N])
 {
+    if (M == 32 && N == 32)
+    {
+        int i, j, m, n;
+        int size = 8;
+        for (i = 0; i < N; i += size){
+            for (j = 0; j < M; j += size){
+                for (m = i; m < i + size && m < N; m++){
+                    for (n = j; n < j + size && n < M; n++){
+                        if(m != n)
+                            B[n][m] = A[m][n];
+                    }
+                    if(i == j)
+                        B[m][m] = A[m][m];
+                }
+            }
+        }
+    }
+    else if(M == 61 && N == 67){
+        int i, j, m, n; 
+        int size = 16;
+        for(i = 0; i < N; i += size){
+            for(j = 0; j < M; j += size){
+                for(m = i; m < i + size && m < N; m++){
+                    for(n = j; n < j + size && n < M; n++){
+                        B[n][m]=A[m][n];
+                    }
+                }
+            }
+        }
+    }
+    else{
+        int i, j, m, n;
+        int size = 4;
+        for (i = 0; i < N; i += size){
+            for (j = 0; j < M; j += size){
+                for (m = i; m < i + size && m < N; m++){
+                    for (n = j; n < j + size && n < M; n++){
+                        if(m != n)
+                            B[n][m] = A[m][n];
+                    }
+                    if(i == j)
+                        B[m][m] = A[m][m];
+                }
+            }
+        }
+    }
 }
 
 /* 
